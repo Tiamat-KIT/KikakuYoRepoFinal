@@ -1,0 +1,2 @@
+# KikakuYoRepoFinal
+もうこれでやるしかなくなりました
