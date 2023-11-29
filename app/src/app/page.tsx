@@ -19,7 +19,7 @@ export default async function Home() {
     }
   }
   const {data:{session},error} = await supabase.auth.getSession()
-  if(session !== null || ){
+  if(session !== null){
         redirect("/show")
   }
   
