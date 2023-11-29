@@ -18,8 +18,8 @@ export default async function Home() {
       console.error("ログイン許可できません！")
     }
   }
-
-  if(data !== null){
+  const {data:{session},error} = await supabase.auth.getSession()
+  if(session !== null || ){
         redirect("/show")
   }
   
