@@ -1,9 +1,8 @@
 import Modal from './Modal';
-import {useSession} from "./Table"
+
 
 const Navbar  = () => {
 
-  const session = useSession()
   return (
     <nav className="navbar bg-orange-700">
       <div className='flex-1 gap-x-3'>
