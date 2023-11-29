@@ -10,7 +10,7 @@ export default async function Home() {
       await supabase.auth.signInWithOtp({
         email: form.get("email")!.toString(),
         options: {
-          emailRedirectTo: `${process.env.NEXT_PUBLIC_VERCEL_URL}/show`
+          emailRedirectTo: `${process.env.NEXT_PUBLIC_VERCEL_URL}/api/auth/callback` //`${process.env.NEXT_PUBLIC_VERCEL_URL}/show`
         }
       })
       console.log("OK!")
