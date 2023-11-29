@@ -10,7 +10,7 @@ export default async function Home() {
       const {data,error} = await supabase.auth.signInWithOtp({
         email: form.get("email")!.toString(),
         options: {
-          emailRedirectTo: `${process.env.NEXT_PUBLIC_VERCEL_URL}/api/auth/callback` //`${process.env.NEXT_PUBLIC_VERCEL_URL}/show`
+          emailRedirectTo: `${process.env.NEXT_PUBLIC_VERCEL_URL}/show`
         }
       })
       console.log("OK!")
@@ -18,6 +18,7 @@ export default async function Home() {
       console.error("ログイン許可できません！")
     }
   }
+  
   const {data:{session},error} = await supabase.auth.getSession()
   if(session !== null){
         redirect("/show")
