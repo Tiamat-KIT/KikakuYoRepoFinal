@@ -14,13 +14,15 @@ export default async function Home() {
         }
       })
       console.log("OK!")
-      if(data !== null){
-        redirect("/show")
-      }
     }else {
       console.error("ログイン許可できません！")
     }
   }
+
+  if(data !== null){
+        redirect("/show")
+  }
+  
   return (
     <main>
       <h1>Example</h1>
