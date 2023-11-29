@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { Faster_One, Inter } from 'next/font/google'
 import './globals.css'
+import HeadNavbar from '@/components/Auto/UI/HeadNavbar'
+import Footer from '@/components/Auto/UI/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,7 +21,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <HeadNavbar />
+        {children}
+        <Footer />
+      </body>
     </html>
   )
 }

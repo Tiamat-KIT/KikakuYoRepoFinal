@@ -20,7 +20,7 @@ const Table: Component = () => {
     return(
         <>
         <Show when={session()} fallback={<div><LogIOButton /></div>}>
-            <table class="overflow-x-auto table shadow-xl bg-white mb-20">
+            <table className="overflow-x-auto table shadow-xl bg-white mb-20">
                 <thead>
                     <tr> 
                         <th>Grade</th>
@@ -29,17 +29,17 @@ const Table: Component = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="hover">
+                    <tr className="hover">
                         <th>1</th>
                         <td>EP</td>
                         <td>aaa</td>
                     </tr>
-                    <tr class="hover">
+                    <tr className="hover">
                         <th>2</th>
                         <td>FM</td>
                         <td>bbb</td>
                     </tr>
-                    <tr class="hover">
+                    <tr className="hover">
                         <th>3</th>
                         <td>EP</td>
                         <td>ccc</td>
@@ -49,11 +49,11 @@ const Table: Component = () => {
         </Show>
         <Show 
             when={session()} 
-            fallback={<div class="pt-10"><button class='btn btn-ghost btn-disabled'>投稿する</button></div>}>
+            fallback={<div className="pt-10"><button className='btn btn-ghost btn-disabled'>投稿する</button></div>}>
             <p>{session()?.user?.name}</p>
             <p>{session()?.user?.email}</p>
-            <button class="btn" onClick={() => signOut()}>Sign Out</button>
-            <A href='/submit' class='btn btn-ghost normal-case text-yellow-400 shadow-md bg-orange-600 hover:bg-orange-400'>
+            <button className="btn" onClick={() => signOut()}>Sign Out</button>
+            <A href='/submit' className='btn btn-ghost normal-case text-yellow-400 shadow-md bg-orange-600 hover:bg-orange-400'>
                 投稿する
             </A>
           </Show>
