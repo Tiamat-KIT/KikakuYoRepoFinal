@@ -23,35 +23,42 @@ import TailwindContainer from "@/components/Auto/UI/TailwindContainer";
     return (
         <>
             <TailwindContainer>
-                <TableContainer>
-                    <Table 
-                        variant="simple"
-                        size="md">
-                        <TableCaption placement="top">
-                            様々な学生の経験談がここに集まっています！
-                        </TableCaption>
-                        <Thead>
-                            <Tr>
-                                <Th>
-                                    学年
-                                </Th>
-                                <Th>
-                                    学科
-                                </Th>
-                                <Th>
-                                    経験談
-                                </Th>
-                            </Tr>
-                        </Thead>
-                        <Tbody overflowX="hidden">
-                        <Tr>
-                            <Td>三年生</Td>
-                            <Td>情報工学科</Td>
-                            <Td >CG-ARTSWebデザインのエキスパート試験に挑戦した！</Td>
-                        </Tr>
-                        </Tbody>
-                    </Table>
-                </TableContainer>
+                <div className="overflow-x-auto">
+                    <table className="table">
+                        {/* head */}
+                        <thead>
+                        <tr>
+                            <th></th>
+                            <th>Name</th>
+                            <th>Job</th>
+                            <th>Favorite Color</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {/* row 1 */}
+                        <tr>
+                            <th>1</th>
+                            <td>Cy Ganderton</td>
+                            <td>Quality Control Specialist</td>
+                            <td>Blue</td>
+                        </tr>
+                        {/* row 2 */}
+                        <tr>
+                            <th>2</th>
+                            <td>Hart Hagerty</td>
+                            <td>Desktop Support Technician</td>
+                            <td>Purple</td>
+                        </tr>
+                        {/* row 3 */}
+                        <tr>
+                            <th>3</th>
+                            <td>Brice Swyre</td>
+                            <td>Tax Accountant</td>
+                            <td>Red</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
             </TailwindContainer>
         </>
     )
