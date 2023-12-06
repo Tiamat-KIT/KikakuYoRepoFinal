@@ -10,8 +10,7 @@ export default function DataTable(){
     }]
     return (
     <>
-        <table className="table">
-        
+        <table className="table"> 
         <thead className="overflow-x-auto">
             <tr>
                 <th />
