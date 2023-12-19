@@ -1,14 +1,14 @@
 "use client"
+import { The_Nautigal } from "next/font/google"
 import { useEffect, useState,use } from "react"
 
 
 export default async function KTable(){
     const [fetchData,setFetchData] = useState<any>(null)
     useEffect( () => {
-        const fetchData = fetch(
-            "https://sheets.googleapis.com/v4/spreadsheets/1qOv5-b5PGoEfpr2DpI6qGFKc9htjq6qJVp4lxWL8GVQ/values/submit?key=AIzaSyBBbda2OLwZWizqfk60R4BbFD8Ji4PEnV0"
-            ,{method: "GET"}).then(respomse => respomse.arrayBuffer()).then(data => data)
-        setFetchData(fetchData)
+        fetch("/api/sps")
+            .then((response) => response.json())
+            .then((data) => setFetchData(data))
     },[])
     console.log(fetchData)
     
