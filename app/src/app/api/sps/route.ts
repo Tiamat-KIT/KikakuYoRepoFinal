@@ -9,4 +9,4 @@ const handler = async (request: Request) => {
         return NextResponse.json(fetchData)
 }   
 
-export default handler
+export { handler as GET, handler as POST }
