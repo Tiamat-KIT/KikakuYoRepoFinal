@@ -1,16 +1,8 @@
-"use client"
-import { The_Nautigal } from "next/font/google"
-import { useEffect, useState,use } from "react"
-
 
 export default async function KTable(){
-    const [fetchData,setFetchData] = useState<any>(null)
-    useEffect( () => {
-        fetch("/api/sps")
+    const fetchData = await fetch("/api/sps")
             .then((response) => response.json())
-            .then((data) => setFetchData(data))
-    },[])
-    console.log(fetchData)
+
     
     const TestedItems: Record<"Grade" | "Major" | "Story",string>[] = [{
         Grade: "3",
