@@ -8,10 +8,13 @@ type SpereadSheetsJson = {
 } 
 export default function KTable(){
     const [fetchDetail,setDetail] = useState<SpereadSheetsJson["values"]| null>(null)
-    const {data = null} = useFetch<SpereadSheetsJson>("https://sheets.googleapis.com/v4/spreadsheets/1qOv5-b5PGoEfpr2DpI6qGFKc9htjq6qJVp4lxWL8GVQ/values/submit?key=AIzaSyBBbda2OLwZWizqfk60R4BbFD8Ji4PEnV0",{},[])
-    const result = data?.values ? data.values : [] as SpereadSheetsJson["values"]
-    setDetail(result)
-    console.log(fetchDetail)
+    useEffect(() => {
+        const {data = null} = useFetch<SpereadSheetsJson>("https://sheets.googleapis.com/v4/spreadsheets/1qOv5-b5PGoEfpr2DpI6qGFKc9htjq6qJVp4lxWL8GVQ/values/submit?key=AIzaSyBBbda2OLwZWizqfk60R4BbFD8Ji4PEnV0",{},[])
+        const result = data?.values.length !== undefined ? data.values : [] as SpereadSheetsJson["values"]
+        setDetail(result)
+        console.log(fetchDetail)
+    },[])
+    
     return (
         <div className="overflow-x-auto">
             <table className="table table-zebra table-pin-row sm:table-sm md:table-md s">
