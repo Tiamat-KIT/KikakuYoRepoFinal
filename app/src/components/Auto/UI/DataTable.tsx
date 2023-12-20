@@ -11,6 +11,7 @@ export default function KTable(){
     const {data = null} = useFetch<SpereadSheetsJson>("https://sheets.googleapis.com/v4/spreadsheets/1qOv5-b5PGoEfpr2DpI6qGFKc9htjq6qJVp4lxWL8GVQ/values/submit?key=AIzaSyBBbda2OLwZWizqfk60R4BbFD8Ji4PEnV0",{},[])
     const result = data?.values ? data.values : [] as SpereadSheetsJson["values"]
     setDetail(result)
+    console.log(fetchDetail)
     return (
         <div className="overflow-x-auto">
             <table className="table table-zebra table-pin-row sm:table-sm md:table-md s">
@@ -23,7 +24,7 @@ export default function KTable(){
                     </tr>
                 </thead>
                 <tbody>
-                {fetchDetail!.map((data,i) => {
+                {/* {fetchDetail!.map((data,i) => {
                     return (
                         <tr className="divide-y-[1.5px] divide-blue-200" key={i}> 
                             <td>
@@ -40,7 +41,7 @@ export default function KTable(){
                             </td>
                         </tr>
                     )
-                })}
+                })} */}
                 </tbody>
             </table>
         </div>
