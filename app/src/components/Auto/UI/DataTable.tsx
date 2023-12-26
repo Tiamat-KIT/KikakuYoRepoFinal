@@ -1,4 +1,3 @@
-"use client"
 import { TestModule } from "@/gss"
 type SpereadSheetsJson = {
     range:string,
