@@ -16,6 +16,7 @@ export const TestModule = async() => {
     
     await doc.loadInfo(); // loads document properties and worksheets
     console.log(doc.title);
+    return doc
 }
 
 /* await doc.updateProperties({ title: 'renamed doc' });

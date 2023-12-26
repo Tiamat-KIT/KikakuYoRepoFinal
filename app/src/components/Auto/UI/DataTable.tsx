@@ -1,11 +1,12 @@
 import { TestModule } from "@/gss"
+import { GoogleSpreadsheet } from "google-spreadsheet"
 type SpereadSheetsJson = {
     range:string,
     majorDimension: string,
     values: Array<string[]>
 } 
 
-export default async function KTable(){
+export default async function KTable({doc}:{doc: GoogleSpreadsheet}){
     await TestModule()
     return (
         <div className="overflow-x-auto">
@@ -43,7 +44,9 @@ export default async function KTable(){
     )
 }
 
-export async function getStaticProps() {
-    await TestModule()
-    return null
+export async function getServerSideProps() {
+    const doc = await TestModule()
+    return{
+        data:doc
+    }
 }
