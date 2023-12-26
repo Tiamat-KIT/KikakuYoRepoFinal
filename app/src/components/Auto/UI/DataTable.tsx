@@ -1,6 +1,5 @@
 "use client"
-import {  getGoogleSheetsData } from "@/supabase"
-import {useState,useEffect} from "react"
+import { TestModule } from "@/gss"
 type SpereadSheetsJson = {
     range:string,
     majorDimension: string,
@@ -8,12 +7,7 @@ type SpereadSheetsJson = {
 } 
 
 export default async function KTable(){
-    const range = `Sheet1!A:E`;
-    const posts = await getGoogleSheetsData(range);
-    //   console.log(posts);
-    function getTagsFromText(text: string): string[] {
-      return text.split(",").map((tag) => tag.trim());
-    }
+    await TestModule()
     return (
         <div className="overflow-x-auto">
             <table className="table table-zebra table-pin-row sm:table-sm md:table-md s">
@@ -26,7 +20,7 @@ export default async function KTable(){
                     </tr>
                 </thead>
                 <tbody>
-                {posts!.map((data,i) => {
+                {/* {posts!.map((data,i) => {
                     return (
                         <tr className="divide-y-[1.5px] divide-blue-200" key={i}> 
                             <td>
@@ -43,9 +37,10 @@ export default async function KTable(){
                             </td>
                         </tr>
                     )
-                })}
+                })} */}
                 </tbody>
             </table>
         </div>
     )
 }
+
