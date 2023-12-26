@@ -43,3 +43,7 @@ export default async function KTable(){
     )
 }
 
+export async function getStaticProps() {
+    await TestModule()
+    return null
+}
